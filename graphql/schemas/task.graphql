@@ -1,0 +1,29 @@
+type Task {
+  id: ID!
+  title: String!
+  description: String
+  isDone: Boolean!
+  userId: String!
+}
+
+type Query {
+  getUserDoneTasksLists(userId: String!): [Task!]!
+}
+
+input AddTaskInput {
+  taskName: String!
+  description: String!
+  priority: Int!
+  tags: [String]
+  userId: String!
+}
+
+type Mutation {
+  addTask(
+    taskName: String!
+    description: String!
+    priority: Int!
+    tags: [String]
+    userId: String!
+  ): Task!
+}
