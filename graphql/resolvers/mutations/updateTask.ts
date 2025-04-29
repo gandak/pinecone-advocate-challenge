@@ -50,7 +50,7 @@ export const updateTask = async (
   );
 
   if (!updatedTask) {
-    throw new GraphQLError("Task to update not found.");
+    throw new GraphQLError("Task update failed.");
   }
   return updatedTask;
 };
